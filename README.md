@@ -18,6 +18,11 @@ A SwiftUI app that displays a live-updating list of upcoming races with filterin
   * Note: The API may sometimes return fewer than 5 races, especially after filtering.
   * A more accurate requirement might be "at least 5 races" unless another API supports filtered results more effectively.
 
+![Light mode](Screenshots/light-mode-1.png?raw=true)
+![Light mode filters](Screenshots/light-mode-2.png?raw=true)
+![Dark mode](Screenshots/dark-mode-1.png?raw=true)
+![Dark mode filters](Screenshots/dark-mode-2.png?raw=true)
+
 ---
 
 ## 🧱 Architecture
