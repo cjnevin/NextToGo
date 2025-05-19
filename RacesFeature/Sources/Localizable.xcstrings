@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Done" : {
+      "extractionState" : "manual"
+    },
+    "Filters" : {
+      "extractionState" : "manual"
+    },
+    "Greyhound Racing" : {
+      "extractionState" : "manual"
+    },
+    "Harness Racing" : {
+      "extractionState" : "manual"
+    },
+    "Horse Racing" : {
+      "extractionState" : "manual"
+    },
+    "Next to Go" : {
+      "extractionState" : "manual"
+    }
+  },
+  "version" : "1.0"
+}
