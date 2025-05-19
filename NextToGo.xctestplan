@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "D46FA2C2-8889-4D75-BAD2-1778FC7319AA",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:NextToGo.xcodeproj",
+        "identifier" : "02E853092DD73575002A9362",
+        "name" : "NextToGoTests"
+      }
+    }
+  ],
+  "version" : 1
+}
