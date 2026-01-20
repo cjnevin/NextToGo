@@ -19,9 +19,8 @@ A SwiftUI app that displays a live-updating list of upcoming races with filterin
   * Mimics the website logic, where deselecting all filters reselects all.
 * Display meeting name, race number, and advertised start as a countdown.
 * Always display 5 races, with automatic data refresh.
-
-  * Note: The API may sometimes return fewer than 5 races, especially after filtering.
-  * A more accurate requirement might be "at least 5 races" unless another API supports filtered results more effectively.
+  * Increased 'count' parameter to 50 to reduce the likelihood of showing less than that.
+  * Note: Ideally, a param like 'categories' should be available so we don't receive data we do not need and then the 'count' parameter could be respected.
  
 ---
 

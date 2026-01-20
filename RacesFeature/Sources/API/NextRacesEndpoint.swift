@@ -16,7 +16,7 @@ public protocol NextRacesEndpoint: Actor {
 
 extension APIManager: NextRacesEndpoint {
     public func fetchNextRaces() async throws(NextRacesError) -> NextRacesResponse {
-        guard let url = URL(string: "https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=10") else {
+        guard let url = URL(string: "https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=50") else {
             throw .invalidRequest
         }
         var urlRequest = URLRequest(url: url)
