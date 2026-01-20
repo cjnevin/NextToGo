@@ -121,8 +121,12 @@ public final class NextRacesViewModel {
             logger.debug("Fetched")
             updateUI()
         } catch {
-            logger.debug("Fetching failed")
-            state = .error(error.localizedDescription)
+            logger.debug("Fetching failed \(error.localizedDescription)")
+            switch error {
+            case .noInternet: state = .error("Unable to retrieve races. Please check your internet connection.")
+            default: state = .error("Unable to retrieve races. Please try again later.")
+            }
+            latestResponse = nil
         }
     }
 }

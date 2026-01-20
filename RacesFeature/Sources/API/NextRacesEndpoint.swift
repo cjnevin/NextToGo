@@ -22,11 +22,20 @@ extension APIManager: NextRacesEndpoint {
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         do {
-            let (data, _) = try await urlSession.data(for: urlRequest)
+            let (data, response) = try await urlSession.data(for: urlRequest)
+            guard let httpURLResponse = response as? HTTPURLResponse, 200..<300 ~= httpURLResponse.statusCode else {
+                throw NextRacesError.networkError
+            }
             let apiModel = try decoder.decode(NextRacesResponse.self, from: data)
             return apiModel
         } catch {
-            throw .invalidResponse
+            if let nsError = error as? NSError, nsError.code == NSURLErrorNotConnectedToInternet {
+                throw .noInternet
+            } else if error is DecodingError {
+                throw .invalidResponse
+            } else {
+                throw .networkError
+            }
         }
     }
 }

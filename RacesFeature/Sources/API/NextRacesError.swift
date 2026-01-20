@@ -8,6 +8,8 @@
 import Foundation
 
 public enum NextRacesError: Error, Sendable {
+    case networkError
+    case noInternet
     case invalidRequest
     case invalidResponse
 }

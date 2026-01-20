@@ -36,7 +36,19 @@ public struct NextRacesView: View {
                         await viewModel.startTimer()
                     }
                 case .error(let string):
-                    Text(string).foregroundColor(.red)
+                    VStack {
+                        Text(string).foregroundColor(.red).padding()
+
+                        Button {
+                            Task {
+                                await viewModel.startFetching()
+                            }
+                        } label: {
+                            Text("Retry")
+                                .foregroundStyle(.red)
+                        }
+                    }
+                    .padding()
                 }
             }
             .navigationTitle(LocalizedStringKey("Next to Go"))
