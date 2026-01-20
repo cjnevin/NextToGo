@@ -21,18 +21,11 @@ extension Calendar: DateProvider {
     }
 
     public func elapsedTime(from date: Date) -> String {
-        let components = dateComponents(
-            [.minute, .second],
-            from: Date(),
-            to: date
-        )
-        let minutes = components.minute ?? 0
-        let seconds = abs(components.second ?? 0)
-        if abs(minutes) == 0 {
-            return "\(components.second ?? 0)s"
-        } else {
-            return "\(components.minute ?? 0)m \(seconds)s"
-        }
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.minute, .second]
+        formatter.unitsStyle = .abbreviated
+        formatter.zeroFormattingBehavior = [.dropAll]
+        return formatter.string(from: Date(), to: date) ?? "0s"
     }
 }
 
